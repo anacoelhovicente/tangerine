@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tangerine</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link href="dist/tangerine-grid.min.css" rel="stylesheet" type="text/css">
+	<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<header id="top">
+	<div class="container column-xs main-xs-center cross-xs-center">
+	  <h1>Tangerine</h1>
+	  <h3>Add slices. Remove slices.</h3>
+	  <p>A responsive grid system based on flexbox</p>
+	  <nav>
+		<a href="#" class="button">Download</a>
+		<a href="https://github.com/anacoelhovicente/tangerine" class="button">Github</a>
+	  </nav>
+	</div>
+</header>
+<div class="container">
+	<h2 id="grid">Grid</h2>
+	<h3>Container</h3>
+	<em>.container</em>
+	<p>You can declare your flexbox grid as a child of .container or .container.row-</p>
+	<div class="example column-xs row-md cross-xs-stretch padder">
+	  <div class="col-sm-half">
+			<pre class="column-xs main-xs-center code"><code>&lt;div class=&#34;container&#34;>
+	&lt;div class=&#34;row-xs&#34;>
+		&lt;div class=&#34;col&#34;>1&lt;/div>
+		&lt;div class=&#34;col&#34;>2&lt;/div>
+	&lt;/div>
+&lt;/div></code></pre>
+		</div>
+		<div class="col-sm-half">
+			<pre class="column-xs main-xs-center"><code>&lt;div class=&#34;container row-xs&#34;>
+	&lt;div class=&#34;col&#34;>1&lt;/div>
+	&lt;div class=&#34;col&#34;>2&lt;/div>
+&lt;/div></code></pre>
+		</div>
+	</div>
+	<h3>Horizontal grid</h3>
+	<em>.row-xs .row-sm .row-md .row-lg</em>
+	<div class="example padder">
+		<div class="row-xs">
+			<div class="col"><div class="demo"></div></div>
+			<div class="col"><div class="demo"></div></div>
+		</div>
+	</div>
+	<pre><code>&lt;div class=&#34;padder&#34;>
+	&lt;div class=&#34;row-xs&#34;>
+		&lt;div class=&#34;col&#34;>1&lt;/div>
+		&lt;div class=&#34;col&#34;>2&lt;/div>
+	&lt;/div>
+&lt;/div></code></pre>
+	<h3>Vertical grid</h3>
+	<em>.column-xs .column-sm .column-md .column-lg</em>
+	<div class="example padder">
+		<div class="column-xs">
+			<div class="col"><div class="demo"></div></div>
+			<div class="col"><div class="demo"></div></div>
+		</div>
+	</div>
+	<pre><code>&lt;div class=&#34;padder&#34;>
+	&lt;div class=&#34;row-xs&#34;>
+		&lt;div class=&#34;col&#34;>1&lt;/div>
+		&lt;div class=&#34;col&#34;>2&lt;/div>
+	&lt;/div>
+&lt;/div></code></pre>
+	<h3>Padding</h3>
+	<em>.padder</em>
+	<p>All flexbox elements have a padding of 15px. To remove the offset use .padder on a parent element.</p>
+	<pre class="example"><code>&lt;div class=&#34;container&#34;>
+	&lt;div class=&#34;row-xs padder&#34;>
+		&lt;div class=&#34;col&#34;>1&lt;/div>
+		&lt;div class=&#34;col&#34;>2&lt;/div>
+	&lt;/div>
+&lt;/div></code></pre>
+	<h3>Nesting</h3>
+	<p>Place grids inside grids.</p>
+	<div class="example padder">
+	  <div class="column-xs row-md cross-xs-stretch">
+		  <div class="col-xs-half">
+			  <div class="demo">
+				<div class="column-xs">
+				  <div class="col"><div class="demo"></div></div>
+				  <div class="col"><div class="demo"></div></div>
+				</div>
+			  </div>
+		  </div>
+		  <div class="col-xs-half">
+			<div class="demo row-xs">
+			  <div class="col"><div class="demo"></div></div>
+			  <div class="col"><div class="demo"></div></div>
+			</div>
+		  </div>
+	  </div>
+	</div>
+	<pre><code>&lt;div class=&#34;column-xs row-md cross-xs-stretch padder&#34;>
+	&lt;div class="col-xs-half">
+		&lt;div class="column-xs">
+		  &lt;div class="col">1&lt;/div>
+		  &lt;div class="col">2&lt;/div>
+		&lt;/div>
+	&lt;/div>
+	&lt;div class="col-xs-half">
+	  &lt;div class="row-xs">
+		&lt;div class="col">1&lt;/div>
+		&lt;div class="col">2&lt;/div>
+	  &lt;/div>
+	&lt;/div>
+&lt;/div></code></pre>
+	<h3>Reverse</h3>
+	<em>.reverse</em>
+	<p>Can be used on horizontal or vertical grids.</p>
+	<div class="example demo">
+	  <div class="row-xs reverse">
+		<div class="col"><div class="demo">1</div></div>
+		<div class="col"><div class="demo">2</div></div>
+		<div class="col"><div class="demo">3</div></div>
+	  </div>
+	</div>
+	<pre><code>&lt;div class="row-xs reverse">
+	&lt;div class="col">1&lt;/div>
+	&lt;div class="col">2&lt;/div>
+	&lt;div class="col">3&lt;/div>
+&lt;/div></code></pre>
+	<h2 id="columns">Columns</h2>
+	<p>Columns are responsive and you can add as many as you want, the grid will adjust itself.</p>
+	<h3>Auto width columns</h3>
+	<em>.col</em>
+	<div class="example padder">
+		<div class="column-xs row-md">
+			<div class="col"><div class="demo"></div></div>
+			<div class="col"><div class="demo"></div></div>
+		</div>
+		<div class="column-xs row-md">
+			<div class="col"><div class="demo"></div></div>
+			<div class="col"><div class="demo"></div></div>
+			<div class="col"><div class="demo"></div></div>
+			<div class="col"><div class="demo"></div></div>
+			<div class="col"><div class="demo"></div></div>
+			<div class="col"><div class="demo"></div></div>
+		</div>
+		<div class="column-xs row-md">
+			<div class="col"><div class="demo"></div></div>
+			<div class="col"><div class="demo"></div></div>
+			<div class="col"><div class="demo"></div></div>
+			<div class="col"><div class="demo"></div></div>
+			<div class="col"><div class="demo"></div></div>
+			<div class="col"><div class="demo"></div></div>
+			<div class="col"><div class="demo"></div></div>
+			<div class="col"><div class="demo"></div></div>
+			<div class="col"><div class="demo"></div></div>
+		</div>
+	</div>
+	<pre><code>&lt;div class=&#34;padder&#34;>
+	&lt;div class=&#34;column-xs row-md&#34;>
+		&lt;div class=&#34;col&#34;>1&lt;/div>
+		&lt;div class=&#34;col&#34;>2&lt;/div>
+	&lt;/div>
+	&lt;div class=&#34;column-xs row-md&#34;>
+		&lt;div class=&#34;col&#34;>1&lt;/div>
+		&lt;div class=&#34;col&#34;>2&lt;/div>
+		&lt;div class=&#34;col&#34;>3&lt;/div>
+	&lt;/div>
+&lt;/div></code></pre>
+	<h3>Responsive width columns</h3>
+	<em>.col-xs- .col-sm- .col-md- .col-lg-</em>
+	<div class="example padder">
+		<div class="column-xs row-sm">
+			<div class="col-sm-half col-lg-two-thirds"><div class="demo"></div></div>
+			<div class="col-sm-half col-lg-third"><div class="demo"></div></div>
+		</div>
+		<div class="column-xs row-sm">
+			<div class="col-sm-tenth"><div class="demo"></div></div>
+			<div class="col-sm-fifth"><div class="demo"></div></div>
+			<div class="col-sm-half"><div class="demo"></div></div>
+			<div class="col-sm-fifth"><div class="demo"></div></div>
+		</div>
+		<div class="column-xs row-sm">
+			<div class="col col-md-quarter"><div class="demo"></div></div>
+			<div class="col col-md-quarter"><div class="demo"></div></div>
+			<div class="col col-md-half"><div class="demo"></div></div>
+		</div>
+	</div>
+	<div class="example column-xs row-md cross-xs-stretch padder">
+	  <div class="col-sm-half">
+			<pre class="column-xs main-xs-center"><code>&lt;div class=&#34;padder&#34;>
+	&lt;div class=&#34;column-xs row-sm&#34;>
+		&lt;div class="col-sm-half col-lg-two-thirds">1&lt;/div>
+		&lt;div class="col-sm-half col-lg-third"">2&lt;/div>
+	&lt;/div>
+	&lt;div class=&#34;column-xs row-sm&#34;>
+		&lt;div class="col-sm-tenth">1&lt;/div>
+		&lt;div class="col-sm-fifth&#34;>2&lt;/div>
+		&lt;div class="col-sm-half&#34;>3&lt;/div>
+		&lt;div class="col-sm-fifth&#34;>2&lt;/div>
+	&lt;/div>
+	&lt;div class=&#34;column-xs row-sm&#34;>
+		&lt;div class="col col-md-quarter">1&lt;/div>
+		&lt;div class="col col-md-quarter">2&lt;/div>
+		&lt;div class="col col-md-half">3&lt;/div>
+	&lt;/div>
+&lt;/div></code></pre>
+		</div>
+		<div class="col-sm-half">
+			<pre class="column-xs main-xs-center"><code>.col-xs-tenth {
+    flex: 0 0 10%;
+}
+.col-xs-fifth {
+    flex: 0 0 20%;
+}
+.col-xs-quarter {
+    flex: 0 0 25%;
+}
+.col-xs-third {
+    flex: 0 0 33.3333334%;
+}
+.col-xs-half {
+    flex: 0 0 50%;
+}
+.col-xs-two-thirds {
+    flex: 0 0 66.667%;
+}</code></pre>
+		</div>
+	</div>
+	<h2 id="align-main">Alignment on the main axis</h2>
+	<p>Alignment is responsive and can be used with the same breakpoints - xs, sm, md, lg.</p>
+	<h3>Center</h3>
+	<em>.main-xs-center .main-sm-center .main-md-center .main-lg-center</em>
+	<div class="example">
+	  <div class="row-xs main-xs-center demo">
+		<div class="col-xs-third"><div class="demo"></div></div>
+		<div class="col-xs-third"><div class="demo"></div></div>
+	  </div>
+	</div>
+	<pre><code>&lt;div class="row-xs main-xs-center">
+	&lt;div class="col-xs-third">1&lt;/div>
+	&lt;div class="col-xs-third"">2&lt;/div>
+&lt;/div></code></pre>
+	<h3>End</h3>
+	<em>.main-xs-end .main-sm-end .main-md-end .main-lg-end</em>
+	<div class="example">
+	  <div class="row-xs main-xs-end demo">
+		<div class="col-xs-third"><div class="demo"></div></div>
+		<div class="col-xs-third"><div class="demo"></div></div>
+	  </div>
+	</div>
+	<pre><code>&lt;div class="row-xs main-xs-end">
+	&lt;div class="col-xs-third">1&lt;/div>
+	&lt;div class="col-xs-third"">2&lt;/div>
+&lt;/div></code></pre>
+	<h3>Between</h3>
+	<em>.main-xs-between .main-sm-between .main-md-between .main-lg-between</em>
+	<div class="example">
+	  <div class="row-xs main-xs-between demo">
+		<div class="col-xs-third"><div class="demo"></div></div>
+		<div class="col-xs-third"><div class="demo"></div></div>
+	  </div>
+	</div>
+	<pre><code>&lt;div class="row-xs main-xs-between">
+	&lt;div class="col-xs-third">1&lt;/div>
+	&lt;div class="col-xs-third"">2&lt;/div>
+&lt;/div></code></pre>
+	<h3>Around</h3>
+	<em>.main-xs-around .main-sm-around .main-md-around .main-lg-around</em>
+	<div class="example">
+	  <div class="row-xs main-xs-around demo">
+		<div class="col-xs-third"><div class="demo"></div></div>
+		<div class="col-xs-third"><div class="demo"></div></div>
+	  </div>
+	</div>
+	<pre><code>&lt;div class="row-xs main-xs-around">
+	&lt;div class="col-xs-third">1&lt;/div>
+	&lt;div class="col-xs-third"">2&lt;/div>
+&lt;/div></code></pre>
+	<h2 id="align-cross">Alignment on the cross axis</h2>
+	<p>Alignment is responsive and can be used with the same breakpoints - xs, sm, md, lg.</p>
+	<h3>Start</h3>
+	<em>.cross-xs-start .cross-sm-start .cross-md-start .cross-lg-start</em>
+	<div class="example">
+	  <div class="row-xs cross-xs-start demo">
+		<div class="col"><div class="demo big"></div></div>
+		<div class="col"><div class="demo"></div></div>
+	  </div>
+	</div>
+	<pre><code>&lt;div class="row-xs cross-xs-start">
+	&lt;div class="col-xs-third">1&lt;/div>
+	&lt;div class="col-xs-third"">2&lt;/div>
+&lt;/div></code></pre>
+	<h3>Center</h3>
+	<em>.cross-xs-center .cross-sm-center .cross-md-center .cross-lg-center</em>
+	<div class="example">
+	  <div class="row-xs cross-xs-center demo">
+		<div class="col"><div class="demo big"></div></div>
+		<div class="col"><div class="demo"></div></div>
+	  </div>
+	</div>
+	<pre><code>&lt;div class="row-xs cross-xs-center">
+	&lt;div class="col">1&lt;/div>
+	&lt;div class="col"">2&lt;/div>
+&lt;/div></code></pre>
+	<h3>End</h3>
+	<em>.cross-xs-end .cross-sm-end .cross-md-end .cross-lg-end</em>
+	<div class="example">
+	  <div class="row-xs cross-xs-end demo">
+		<div class="col"><div class="demo big"></div></div>
+		<div class="col"><div class="demo"></div></div>
+	  </div>
+	</div>
+	<pre><code>&lt;div class="row-xs cross-xs-end">
+	&lt;div class="col">1&lt;/div>
+	&lt;div class="col"">2&lt;/div>
+&lt;/div></code></pre>
+	<h3>Stretch</h3>
+	<em>.cross-xs-stretch .cross-sm-stretch .cross-md-stretch .cross-lg-stretch</em>
+	<div class="example demo">
+	  <div class="row-xs cross-xs-stretch">
+		<div class="col"><div class="demo big"></div></div>
+		<div class="col"><div class="demo"></div></div>
+	  </div>
+	</div>
+	<pre><code>&lt;div class="row-xs cross-xs-stretch">
+	&lt;div class="col">1&lt;/div>
+	&lt;div class="col"">2&lt;/div>
+&lt;/div></code></pre>
+	<footer class="column-xs row-sm cross-xs-center main-xs-between">
+	  <span>Developed by <a href="http://anavicente.me" target="_blank">Ana Vicente</a>.</span>
+	  <a href="#top" class="back-top"><i class="arr-up"></i> Back to Top</a>
+	</footer>
+</div>
+</body>
+</html>
